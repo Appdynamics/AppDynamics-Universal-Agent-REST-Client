@@ -2,14 +2,16 @@
 
 
 # Introduction
-The AppDynamics Universal Agent REST Client is an automation tool for executing different workflows related to Universal Agent management. The AppDynamics Universal Agent REST Client is developed using python 2.7 on MACOSX. It is known to work on linux with python 2.7.x.
+The AppDynamics Universal Agent REST Client is an automation tool for executing different workflows related to Universal Agent management. 
+
+The AppDynamics Universal Agent REST Client is developed using python 2.7 on MACOSX. It is known to work on linux with python 2.7.x.
 
 This repository contains four main python modules for executing the REST calls and one wrapper module.
 
-To use the tool, execute the wrapper module "APICalls.py" as seen below:
+To use the tool, execute the wrapper module "APICalls.py" as seen below.
 
 
-# Installation
+# Usage
 
 `python APICalls.py --controller-host <controller_host> --controller-port <controller_port> --userName <username>@<account_name> --password <password>`
 
