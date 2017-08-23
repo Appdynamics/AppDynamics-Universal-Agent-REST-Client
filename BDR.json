@@ -1,0 +1,59 @@
+{
+    "name": "BDR App",
+    "comments": "This is a rule for the BDR Application",
+    "config": {
+      "account_name": "customer1",
+      "account_access_key": "6d0530d6-d118-45ee-bd64-657249cd5ba7",
+      "controller_host": "controllerlb-wellsfargodeployme-zpdxob28.srv.ravcloud.com",
+      "global_account_name": "customer1_fd0dab4e-3c14-48c8-9cb7-60ea187d3517",
+      "controller_port": "443"
+    },
+    "rules": [
+      {
+          "name": "BDRFrontEnd",
+          "comments": "This is a rule for the BDR Front End",
+          "condition": "True",
+          "monitor": "java",
+          "config": {
+            "application_name": "BDR App",
+            "tier_name": "FrontEnd",
+            "node_name": "FrontEnd.$env_DATA_CENTER.$network_hostname",
+            "deploy_cmd": ".*-Dhttp.ports=10010,10011.*",
+            "runtime_directory": "/opt/appdynamics/runtime",
+            "state": "started",
+            "version": "4.3.2.1"
+          } 
+      },
+      {
+          "name": "BDRCommerce",
+          "comments": "This is a rule for the BDRCommerce",
+          "condition": "True",
+          "monitor": "java",
+          "config": {
+            "application_name": "BDR App",
+            "tier_name": "Commerce",
+            "node_name": "Commerce.$env_DATA_CENTER.$network_hostname",
+            "deploy_cmd": ".*-Dhttp.port=10020.*",
+            "runtime_directory": "/opt/appdynamics/runtime",
+            "state": "started",
+            "version": "4.3.2.1"
+          }
+      },
+      {
+          "name": "BDRBackend",
+          "comments": "This is a rule for the BDRBackend",
+          "condition": "True",
+          "monitor": "java",
+          "config": {
+            "application_name": "BDR App",
+            "tier_name": "Backend",
+            "node_name": "Backend.$env_DATA_CENTER.$network_hostname",
+            "deploy_cmd": ".*-Dhttp.port=10030.*",
+            "runtime_directory": "/opt/appdynamics/runtime",
+            "state": "started",
+            "version": "4.3.2.1"
+          }
+      }
+    ],
+    "hosts": ["apps1", "cloud"]
+}
