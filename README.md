@@ -13,7 +13,9 @@ To use the tool, execute the wrapper module "APICalls.py" as seen below.
 
 # Usage
 
-`python APICalls.py --controller-host <controller_host> --controller-port <controller_port> --userName <username>@<account_name> --password <password>`
+`python APICalls.py --controller-host <controller host> --controller-port <controller port> --userName <username>@<account name> --password <password> <Manifest File>`
+
+Please note to provide the Manifest file as a positional argument. An example manifest file is found in this repository. 
 
 # Prerequisites
 
